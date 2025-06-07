@@ -28,6 +28,14 @@ pipeline {
             steps {
                 echo './jenkins/scripts/deliver.sh' 
             }
-        }  
+        } 
+        stage('target') {
+            steps {
+                dir('Multi_Branch_master') {
+                sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
+}
+
+    }
+              }
     }
 }
