@@ -4,7 +4,7 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-        stage('Build-1') {
+        stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
             }
@@ -24,10 +24,12 @@ pipeline {
                 sh './jenkins/scripts/deliver.sh' 
             }
         }
-        stage('complete') { 
-            steps {
-                echo './jenkins/scripts/deliver.sh' 
-            }
-        }  
+        stage('target') {
+            steps{
+                dir('Multi_Branch_master') {
+                sh 'java -jar target/my-app-1.0-SNAPSHOT.jar'
+}
+
     }
+              }
 }
