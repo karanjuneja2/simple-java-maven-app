@@ -60,7 +60,7 @@
             <configuration>
               <rules>
                 <requireMavenVersion>
-                  <version>3.6</version>
+                  <version>3.9.10</version>
                 </requireMavenVersion>
                 <requireJavaVersion>
                   <version>17</version>
